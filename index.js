@@ -14,9 +14,10 @@ const pickRandomColour = () => {
 };
 
 const seizure = () => {
-  setInterval(() => {
-    app.style.backgroundColor = pickRandomColour();
-  }, 10);
+  app.style.backgroundColor = pickRandomColour();
+  app.style.color = pickRandomColour();
+  requestAnimationFrame(seizure);
 };
 
-seizure();
+// blazingly fast vsync seizure
+requestAnimationFrame(seizure);
